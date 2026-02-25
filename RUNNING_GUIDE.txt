@@ -1,0 +1,185 @@
+================================================================================
+                    COLLEGE CONNECT - RUNNING GUIDE
+================================================================================
+
+FIRST TIME SETUP (Do this once)
+================================================================================
+
+1. INSTALL NODE.JS
+   - Go to: https://nodejs.org/
+   - Download and install
+   - Restart computer
+   - Test: Open Command Prompt and type: node --version
+
+2. INSTALL MONGODB
+   - Go to: https://www.mongodb.com/try/download/community
+   - Download and install
+   - MongoDB will start automatically
+
+3. RUN SETUP
+   - Double-click: setup.bat
+   - Wait for completion (2-3 minutes)
+
+4. CONFIGURE
+   - Open: backend/.env in Notepad
+   - Make sure it has these lines:
+     MONGO_URI=mongodb://localhost:27017/college-connect
+     JWT_SECRET=my_super_secret_key_12345678901234567890
+     PORT=5000
+     NODE_ENV=development
+   - Save and close
+
+================================================================================
+RUNNING THE APP (Every time you want to use it)
+================================================================================
+
+METHOD 1: USING BATCH FILES (EASIEST)
+--------------------------------------
+1. Double-click: start-backend.bat
+   - Wait for: "Server running on port 5000"
+   - Keep this window OPEN
+
+2. Double-click: start-frontend.bat
+   - Browser will open automatically
+   - Keep this window OPEN
+
+3. Use the app!
+
+METHOD 2: USING COMMAND PROMPT
+--------------------------------------
+1. Open Command Prompt #1:
+   cd backend
+   npm run dev
+   (Keep open)
+
+2. Open Command Prompt #2:
+   cd frontend
+   npm start
+   (Keep open)
+
+3. Browser opens to: http://localhost:3000
+
+================================================================================
+USING THE APPLICATION
+================================================================================
+
+1. CREATE ACCOUNT
+   - Click "Create Account"
+   - Enter: Name, Email, Password (min 6 chars)
+   - Click "Create Account"
+
+2. CREATE TOPIC
+   - Click "Create Topic"
+   - Enter: Topic name and description
+   - Click "Create Topic"
+
+3. ASK QUESTION
+   - Click on a topic
+   - Click "Ask Question"
+   - Enter: Question title and description
+   - Click "Post Question"
+
+4. POST ANSWER
+   - Click on a question
+   - Click "Post Answer"
+   - Enter your answer
+   - Click "Post Answer"
+
+5. VOTE
+   - Click ▲ to upvote
+   - Click ▼ to downvote
+   - Click again to remove vote
+
+================================================================================
+STOPPING THE APP
+================================================================================
+
+- Close both terminal windows
+- Or press Ctrl+C in each window
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+PROBLEM: "npm is not recognized"
+SOLUTION: Install Node.js and restart computer
+
+PROBLEM: "Cannot connect to MongoDB"
+SOLUTION: 
+  1. Open Windows Services (search "services" in Windows)
+  2. Find "MongoDB Server"
+  3. Right-click and select "Start"
+
+PROBLEM: Backend window closes immediately
+SOLUTION:
+  1. Open Command Prompt manually
+  2. Type: cd backend
+  3. Type: npm run dev
+  4. Read the error message
+
+PROBLEM: Port 5000 already in use
+SOLUTION:
+  1. Close other applications using port 5000
+  2. Or change PORT in backend/.env to 5001
+  3. Update frontend/.env: REACT_APP_API_URL=http://localhost:5001
+
+PROBLEM: Port 3000 already in use
+SOLUTION: Close other applications or let it use port 3001
+
+PROBLEM: "Cannot find module"
+SOLUTION:
+  cd backend
+  npm install
+  (Then try again)
+
+================================================================================
+WHAT YOU SHOULD SEE
+================================================================================
+
+BACKEND TERMINAL:
+  Server running on port 5000
+  MongoDB Connected: localhost
+
+FRONTEND:
+  Browser opens to http://localhost:3000
+  Login page appears
+
+WORKING APP:
+  ✓ Can create account
+  ✓ Can login
+  ✓ Can create topics
+  ✓ Can ask questions
+  ✓ Can post answers
+  ✓ Can vote
+
+================================================================================
+QUICK REFERENCE
+================================================================================
+
+URLs:
+  Frontend: http://localhost:3000
+  Backend:  http://localhost:5000
+
+Files to Edit:
+  Backend config: backend/.env
+  Frontend config: frontend/.env
+
+Commands:
+  Install backend:  cd backend && npm install
+  Install frontend: cd frontend && npm install
+  Start backend:    cd backend && npm run dev
+  Start frontend:   cd frontend && npm start
+
+================================================================================
+NEED MORE HELP?
+================================================================================
+
+Read these files:
+  - START_HERE.md      (Start here!)
+  - SIMPLE_START.md    (Beginner guide)
+  - HOW_TO_RUN.md      (Detailed guide)
+  - README.md          (Full documentation)
+
+================================================================================
+                           HAPPY CODING! 🚀
+================================================================================

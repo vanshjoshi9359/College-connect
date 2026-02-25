@@ -1,0 +1,119 @@
+.topic-list-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  background: white;
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.page-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.topic-card-wrapper {
+  display: flex;
+  gap: 16px;
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  border: 2px solid #f3f4f6;
+}
+
+.topic-card-wrapper:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.topic-card {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.topic-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.topic-card p {
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.topic-meta {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 64px 24px;
+  font-size: 18px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.error {
+  color: #dc2626;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}

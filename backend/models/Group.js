@@ -1,0 +1,55 @@
+const mongoose = require('mongoose');
+
+const groupSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  description: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  creatorId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  members: [{
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    joinedAt: {
+      type: Date,
+      default: Date.now
+    },
+    role: {
+      type: String,
+      enum: ['admin', 'member'],
+      default: 'member'
+    }
+  }],
+  topicId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Topic'
+  },
+  isPublic: {
+    type: Boolean,
+    default: true
+  },
+  maxMembers: {
+    type: Number,
+    default: 50
+  }
+}, {
+  timestamps: true
+});
+
+groupSchema.index({ name: 'text', description: 'text' });
+groupSchema.index({ creatorId: 1 });
+groupSchema.index({ 'members.userId': 1 });
+
+module.exports = mongoose.model('Group', groupSchema);
