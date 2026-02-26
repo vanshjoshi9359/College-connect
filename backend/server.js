@@ -25,7 +25,7 @@ const app = express();
 // Middleware
 const allowedOrigins = [
   'http://localhost:3000',
-  'https://your-frontend-url.onrender.com' // Add your Render frontend URL
+  'https://college-connect-2-pe7b.onrender.com' // Add your Render frontend URL
 ];
 
 app.use(cors({
